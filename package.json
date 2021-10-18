@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test mocha ./tests/**/*$NAME*.test.js --exit",
+    "start": "node index.js",
+    "debug": "npx nodemon index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "eslint-config-trybe-fundamentals": "^1.1.1",
     "express": "^4.17.1",
     "mysql2": "^2.3.2",
