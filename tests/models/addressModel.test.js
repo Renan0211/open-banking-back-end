@@ -11,11 +11,9 @@ chai.should();
 chai.use(sinonChai);
 
 const addressModel = require('../../src/models/Address');
-const userModel = require('../../src/models/User');
 
 describe('The address model', () => {
   const Address = addressModel(sequelize, dataTypes);
-  const User = userModel(sequelize, dataTypes);
   const address = new Address();
   it('should have the name "Address"', () => {
     checkModelName(Address, 'Address');
