@@ -21,7 +21,7 @@ describe('The bank model', () => {
 
   it('should have the right properties', () => {
     context('properties', () => {
-      ['receivingTransactionId', 'sendingTransactionId', 'value', 'transactionType'].forEach(checkPropertyExists(transaction))
+      ['sendingAccountId', 'receivingAccountId', 'value', 'transactionType'].forEach(checkPropertyExists(transaction))
     });
   });
 });
