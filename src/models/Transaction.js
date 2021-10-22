@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     sendingAccountId: { type: DataTypes.INTEGER, foreignKey: true },
     receivingAccountId: { type: DataTypes.INTEGER, foreignKey: true },
     value: DataTypes.INTEGER,
-    transactionType: DataTypes.SRING,
+    transactionType: DataTypes.STRING,
   },
   {
     timestamps: false,
