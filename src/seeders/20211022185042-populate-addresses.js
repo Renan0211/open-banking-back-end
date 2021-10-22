@@ -4,6 +4,7 @@ module.exports = {
   up: async (queryInterface, Sequelize) => queryInterface.bulkInsert('Addresses',
     [
       {
+        id: 1,
         country: 'Brazil',
         state: 'São Paulo',
         city: 'Campinas',
@@ -11,6 +12,7 @@ module.exports = {
         number: 123,
       },
       {
+        id: 2,
         country: 'Brazil',
         state: 'Minas Gerais',
         city: 'Belo Horizonte',
@@ -18,6 +20,7 @@ module.exports = {
         number: 456,
       },
       {
+        id:3,
         country: 'Brazil',
         state: 'Rio de Janeiro',
         city: 'Niterói',
