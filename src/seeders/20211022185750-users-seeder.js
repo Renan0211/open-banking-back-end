@@ -13,7 +13,7 @@ module.exports = {
         first_name: 'Ciclano',
         last_name: 'Silva',
         password: 'csilva456',
-        address_id: 1,
+        address_id: 2,
       },
       {
         first_name: 'Beltrano',
