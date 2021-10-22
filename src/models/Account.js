@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'bank_id',
       otherKey: 'user_id',
     });
-    models.User.belongsToMany(models.Book, {
+    models.User.belongsToMany(models.Bank, {
       as: 'banks',
       through: Account,
       foreignKey: 'user_id',

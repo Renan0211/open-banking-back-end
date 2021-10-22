@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
 
   Address.associate = (models) => {
     Address.hasOne(models.User,
-      { foreignKey: 'user_id', as: 'users' });
+      { foreignKey: 'id', as: 'users' });
   };
 
   return Address;
