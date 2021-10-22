@@ -1,6 +1,7 @@
-const {User, Address} = require('../models');
+const { Op } = require("sequelize");
+const {User, Address, Transaction, Account} = require('../models');
 
-const internalError = {err: {message: 'Algo deu errado'}, status: 500};
+const internalError = {err: {message: 'Something went wrong'}, status: 500};
 
 const createNewUser = async (addressInfo, firstName, email, lastName, password) => {
     try {
@@ -14,6 +15,32 @@ const createNewUser = async (addressInfo, firstName, email, lastName, password) 
     }
 }
 
+const getUserAccounts = async (id) => {
+  try {
+    const userInfo = await Account.findAll({where: {user_id: id}});
+    return userInfo;
+  } catch (e) {
+    console.log(e.message);
+    return internalError;
+  }
+}
+
+const getUserBankStatement = async(userId) => {
+  try {
+    const userAccounts = await getUserAccounts(userId);
+    const accountsIds = userAccounts.map(account => account.id);
+    const bankStatement = await Transaction.findAll({where: {
+      [Op.or]: [{sendingAccountId: {[Op.in]: accountsIds}}, {receivingAccountId: {[Op.in]: accountsIds}}]
+    }});
+    return bankStatement;
+  } catch (e) {
+    console.log(e.message);
+    return internalError;
+  }
+}
+
 module.exports = {
   createNewUser,
+  getUserBankStatement,
+  getUserAccounts,
 }

@@ -20,4 +20,14 @@ router.post('/', async (req, res) => {
   res.status(201).json({token});
 });
 
+router.get('/:id/bank-statement', async (req,res) => {
+  const {id} = req.params;
+  const result = await service.getUserBankStatement(id);
+  if (result.err) {
+    const {err, status} = result;
+    return res.status(status).json(err);
+  }
+  res.status(200).json(result);
+})
+
 module.exports = router;
