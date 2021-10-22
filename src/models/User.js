@@ -3,11 +3,12 @@ module.exports = (sequelize, DataTypes) => {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
-    password: DataTypes.SRING,
+    password: DataTypes.STRING,
     addressId: { type: DataTypes.INTEGER, foreignKey: true }
   },
   {
     timestamps: false,
+    tableName: 'Users',
     underscored: true,
   });
 
