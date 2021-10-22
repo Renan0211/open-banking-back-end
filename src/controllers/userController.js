@@ -9,23 +9,15 @@ const jwtConfig = {
 
 const router = express.Router();
 
-const validateToken = (token) => {
-  if (token === undefined || token === '') {
-    return { err: { message: 'Token not found' }, status: 401 };
-  }
-  try {
-    jwt.verify(token, secret);
-  } catch (e) {
-    console.log(e.message);
-    return { err: { message: 'Expired or invalid token' }, status: 401 };
-  }
-  return {};
-};
-
 router.post('/', async (req, res) => {
   const {addressInfo, firstName, lastName, password} = req.body;
   const result = await service.createNewUser(addressInfo, firstName, lastName, password);
-  res.status(201).json(result);
+  if (result.err) {
+    const {err, status} = result;
+    return res.status(status).json(err);
+  }
+  const token = jwt.sign({ data: result }, secret, jwtConfig);
+  res.status(201).json({token});
 });
 
 module.exports = router;
