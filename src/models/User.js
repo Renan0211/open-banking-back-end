@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
 
   User.associate = (models) => {
     User.belongsTo(models.Address,
-      { foreignKey: 'address_id', as: 'addresses' });
+      { foreignKey: 'id', as: 'addresses' });
   };
 
   return User;
