@@ -20,14 +20,19 @@ router.post('/', async (req, res) => {
   res.status(201).json({token});
 });
 
-router.get('/:id/bank-statement', async (req,res) => {
-  const {id} = req.params;
-  const result = await service.getUserBankStatement(id);
-  if (result.err) {
-    const {err, status} = result;
-    return res.status(status).json(err);
+router.get('/bank-statement', async (req,res) => {
+  const {authorization} = req.headers;
+  try {
+    const payload = jwt.verify(authorization, secret);
+    const result = await service.getUserBankStatement(payload.data.id);
+    if (result.err) {
+      const {err, status} = result;
+      return res.status(status).json(err);
+    }
+    res.status(200).json(result);
+  } catch (e) {
+    res.status(401).json({message: 'Token invalid'});
   }
-  res.status(200).json(result);
 })
 
 module.exports = router;
