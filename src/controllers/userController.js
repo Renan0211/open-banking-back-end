@@ -33,6 +33,21 @@ router.get('/bank-statement', async (req,res) => {
   } catch (e) {
     res.status(401).json({message: 'Token invalid'});
   }
-})
+});
+
+router.get('/balance', async(req,res) => {
+  const {authorization} = req.headers;
+  try {
+    const payload = jwt.verify(authorization, secret);
+    const result = await service.getUserBalance(payload.data.id);
+    if (result.err) {
+      const {err, status} = result;
+      return res.status(status).json(err);
+    }
+    res.status(200).json(result);
+  } catch (e) {
+    res.status(401).json({message: 'Token invalid'});
+  }
+});
 
 module.exports = router;

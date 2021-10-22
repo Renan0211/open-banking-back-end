@@ -15,9 +15,9 @@ const createNewUser = async (addressInfo, firstName, email, lastName, password) 
     }
 }
 
-const getUserAccounts = async (id) => {
+const getUserAccounts = async (userId) => {
   try {
-    const userInfo = await Account.findAll({where: {user_id: id}});
+    const userInfo = await Account.findAll({where: {user_id: userId}});
     return userInfo;
   } catch (e) {
     console.log(e.message);
@@ -39,8 +39,19 @@ const getUserBankStatement = async(userId) => {
   }
 }
 
+const getUserBalance = async (userId) => {
+  try {
+    const userAccounts = getUserAccounts(userId);
+  return userAccounts;
+  } catch (e) {
+    console.log(e.message);
+    return internalError;
+  }
+}
+
 module.exports = {
   createNewUser,
   getUserBankStatement,
   getUserAccounts,
+  getUserBalance,
 }
