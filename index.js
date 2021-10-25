@@ -14,7 +14,7 @@ app.use('/login', loginController);
 
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => console.log(`listening in port ${PORT}`));
 
 module.exports = app;
