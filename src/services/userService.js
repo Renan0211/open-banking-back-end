@@ -4,6 +4,9 @@ const {User, Address, Transaction, Account} = require('../models');
 const internalError = {err: {message: 'Something went wrong'}, status: 500};
 
 const createNewUser = async (addressInfo, firstName, email, lastName, password) => {
+  if (addressInfo === undefined || firstName === undefined || email === undefined || lastName === undefined || password === undefined){
+    return {err: {message: 'invalid fields'}, status: 400}
+  }
     try {
       const newAddress = await Address.create(addressInfo);
       const newAddressId = newAddress.id;
