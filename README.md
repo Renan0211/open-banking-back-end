@@ -3,13 +3,13 @@
 This project is a technical challenge for a selective process, so this documentation is made with the people that will be evaluating me in mind. But if you are just curious go ahead! You are also welcome here and I would love your feedback as well if you want to contact me!
 
 ## Summary
-- [Stack]()
-- [Database Modelling]()
-- [Architecture]()
-- [Strengths]()
-- [Weaknesses]()
-- [Difficulties]()
-- [How to Run (this project)]()
+- [Stack](#stack)
+- [Database Modelling](#database-modelling)
+- [Architecture](#architecture)
+- [Strengths](#strengths)
+- [Weaknesses](#weaknesses)
+- [Difficulties](#difficulties)
+- [How to Run (this project)](#how-to-run)
 
 
 ## Stack
