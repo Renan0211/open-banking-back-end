@@ -1,6 +1,11 @@
+
 # Open Banking Back-end
 ## Welcome! :grin:
 This project is a technical challenge for a selective process, so this documentation is made with the people that will be evaluating me in mind. But if you are just curious go ahead! You are also welcome here and I would love your feedback as well if you want to contact me!
+
+And please, if you want more details about the logic and the process of how i developed it, look at the commit history.
+
+You can see the front-end part of this project [here](https://github.com/Renan0211/open-banking-front-end)
 
 ## Summary
 - [Stack](#stack)
@@ -61,7 +66,7 @@ So, i had some issues while developing this project. The first (and foolest) one
 
 The second and third one are directly related: issues of personal matter and lack of time. A lot of things had been happening in my life in the past few weeks, some good and some not that good, but both requiring some of my time, attention and energy. 
 
-Another problem that i had: the requirements of this project were very vague. While I do understand that this may be the better way to evaluate someone's code and logic, I also am not used to projects like these so a lot of times I felt kind of lost and/or wasting time with things that wasn't that important.
+Another problem that i had: the requirements of this project were very vague. While I do understand that this may be the better way to evaluate someone's code and logic, I also am not used to projects like these so a lot of times I felt kind of lost and/or wasting time with things that weren't that important.
 
 And the last one is that this was an individual project, and everyone knows that programming in group is the best way to develop a good application. :grin:
 
